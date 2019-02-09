@@ -38,8 +38,8 @@ export function getTableContent(nVars, exp, vars) {
 
   return res.map(el =>
     el
-      .replace(/1/g, "T")
-      .replace(/0/g, "F")
+      .replace(/(1|true)/g, "T")
+      .replace(/(0|false)/g, "F")
       .split("")
   );
 }

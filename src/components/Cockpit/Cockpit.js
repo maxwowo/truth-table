@@ -1,11 +1,22 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.css";
+import { Input, Container } from "reactstrap";
+import classNames from "classnames";
 import styles from "./Cockpit.module.css";
 
 const Cockpit = props => (
-  <div className={styles.cockpit}>
-    <h1>Truth Table Generator</h1>
-    <input onChange={props.onInputChanged} placeholder="Enter something" />
-  </div>
+  <Container className={classNames(styles.cockpit, styles.textCenter)}>
+    <h1 className={styles.cockpitHeader}>Truth Table Generator</h1>
+    <Input
+      className={classNames(
+        styles.textCenter,
+        styles.transparent,
+        styles.cockpitInput
+      )}
+      onChange={props.onInputChanged}
+      placeholder="Enter something"
+    />
+  </Container>
 );
 
 export default Cockpit;

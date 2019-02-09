@@ -15,11 +15,7 @@ class App extends Component {
     const exp = Helper.getExp(event);
     const vars = Helper.getVars(exp);
     const head = Helper.getTableHead(vars, exp);
-    const content = Helper.getTableContent(
-      vars.length,
-      exp,
-      vars
-    );
+    const content = Helper.getTableContent(vars.length, exp, vars);
 
     this.setState({
       showTable: !exp ? false : true,
@@ -30,14 +26,11 @@ class App extends Component {
 
   render() {
     const table = this.state.showTable ? (
-      <TruthTable
-        content={this.state.ttContent}
-        head={this.state.ttHead}
-      />
+      <TruthTable content={this.state.ttContent} head={this.state.ttHead} />
     ) : null;
 
     return (
-      <div>
+      <div className={styles.appBody}>
         <Cockpit onInputChanged={this.handleInputChanged} />
         {table}
       </div>

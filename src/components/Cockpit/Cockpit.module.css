@@ -1,3 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Roboto');
+
 .cockpit {
-    text-align: center;
+  text-align: center;
+  color: white;
+}
+
+.cockpitHeader {
+    font-family: 'Major Mono Display', monospace;
+    font-size: 4em;
+}
+
+.cockpitInput {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5em;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.transparent,
+.transparent:focus,
+.transparent:active,
+.transparent::placeholder {
+  background: transparent;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  color: white;
 }
