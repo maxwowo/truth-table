@@ -1,14 +1,12 @@
 import React from "react";
-import Rows from "./Rows/Rows";
-import Header from "./Header/Header";
+import TruthTableBody from "./TruthTableBody/TruthTableBody";
+import TruthTableHead from "./TruthTableHead/TruthTableHead";
 import styles from "./Table.module.css";
 
 const Table = props => (
   <table>
-    <Header row={props.header} />
-    <tbody>
-      <Rows content={props.content} />
-    </tbody>
+    <TruthTableHead row={props.header} />
+    <TruthTableBody content={props.content} />
   </table>
 );
 
