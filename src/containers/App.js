@@ -1,34 +1,38 @@
 import React, { Component } from "react";
 import Cockpit from "../components/Cockpit/Cockpit";
-import Table from "../components/Table/Table";
-import * as Helper from "./Helpers";
+import TruthTable from "../components/TruthTable/TruthTable";
+import * as Helper from "./Helper";
 import styles from "./App.module.css";
 
 class App extends Component {
   state = {
-    tableHeader: null,
-    tableContent: null,
+    ttHead: null,
+    ttContent: null,
     showTable: false
   };
 
   handleInputChanged = event => {
-    const exp = Helper.getExpression(event);
-    const variables = Helper.getVariables(exp);
-    const header = Helper.getTableHeader(variables, exp);
-    const content = Helper.getTableContent(variables.length, exp, variables);
+    const exp = Helper.getExp(event);
+    const vars = Helper.getVars(exp);
+    const head = Helper.getTableHead(vars, exp);
+    const content = Helper.getTableContent(
+      vars.length,
+      exp,
+      vars
+    );
 
     this.setState({
       showTable: !exp ? false : true,
-      tableHeader: header,
-      tableContent: content
+      ttHead: head,
+      ttContent: content
     });
   };
 
   render() {
     const table = this.state.showTable ? (
-      <Table
-        content={this.state.tableContent}
-        header={this.state.tableHeader}
+      <TruthTable
+        content={this.state.ttContent}
+        head={this.state.ttHead}
       />
     ) : null;
 
