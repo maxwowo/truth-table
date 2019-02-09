@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Cockpit from "../components/Cockpit/Cockpit";
 import TruthTable from "../components/TruthTable/TruthTable";
-import * as Helper from "./Helpers";
+import * as Helper from "./Helper";
 import styles from "./App.module.css";
 
 class App extends Component {
