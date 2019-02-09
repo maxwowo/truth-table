@@ -1,0 +1,25 @@
+.page {
+    margin-top: 10vh;
+}
+
+.helpIcon, .githubIcon {
+    color: white;
+    font-size: 4em;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    transition: 0.2s;
+}
+
+.helpIcon {
+    margin: 0 20px 20px 0;
+}
+
+.githubIcon {
+    margin: 0 20px 110px 0;
+}
+
+.helpIcon:hover, .githubIcon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}

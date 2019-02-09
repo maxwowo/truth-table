@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Cockpit from "../components/Cockpit/Cockpit";
-import TruthTable from "../components/TruthTable/TruthTable";
+import Page from "../components/Page/Page";
+import "./App.module.css";
 import * as Helper from "./Helper";
-import styles from "./App.module.css";
 
 class App extends Component {
   state = {
@@ -12,10 +11,10 @@ class App extends Component {
   };
 
   handleInputChanged = event => {
-    const formattedExp = Helper.formatExp(event.target.value)
-       
+    const formattedExp = Helper.formatExp(event.target.value);
+
     event.target.value = formattedExp;
-    
+
     const exp = Helper.getExp(event);
     const vars = Helper.getVars(exp);
     const head = Helper.getTableHead(vars, formattedExp);
@@ -31,20 +30,16 @@ class App extends Component {
   handleKeyPress = event => {
     if (!Helper.validKey(event.key)) event.preventDefault();
   };
-  
-  render() {
-    const table = this.state.showTable ? (
-      <TruthTable content={this.state.ttContent} head={this.state.ttHead} />
-    ) : null;
 
+  render() {
     return (
-      <div className={styles.appBody}>
-        <Cockpit
-          onInputChanged={this.handleInputChanged}
-          onKeyPress={this.handleKeyPress}
-        />
-        {table}
-      </div>
+      <Page
+        onInputChanged={this.handleInputChanged}
+        onKeyPress={this.handleKeyPress}
+        content={this.state.ttContent}
+        head={this.state.ttHead}
+        showTable={this.state.showTable}
+      />
     );
   }
 }
