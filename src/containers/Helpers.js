@@ -1,41 +1,45 @@
-export function getVariables(exp) {
+export function getVars(exp) {
   return exp.split(/\W/g).filter(el => el !== "");
 }
 
-export function getExpression(event) {
+export function getExp(event) {
   return event.target.value.replace(/\s/g, "");
 }
 
-export function getTableHeader(variables, exp) {
-  return [...variables, exp];
+export function getTableHead(vars, exp) {
+  return [...vars, exp];
 }
 
-export function getTableContent(numVariables, exp, variables) {
+function evalExp(exp, truthValues, vars) {
+  let res = exp;
+  for (let i = 0; i < vars.length; i++) {
+    let regex = new RegExp(vars[i], "g");
+    res = res.replace(regex, truthValues[i]);
+  }
+  return eval(res);
+}
+
+function bin(dec, nVars) {
+  return dec.toString(2).padStart(nVars, "0");
+}
+
+export function getTableContent(nVars, exp, vars) {
   const res = [];
 
-  function evalExp(exp, perm, variables) {
-    let tmp = exp;
-    for (let i = 0; i < numVariables; i++) {
-      let regex = new RegExp(variables[i], "g");
-      tmp = tmp.replace(regex, perm[i]);
-    }
-    return eval(tmp);
-  }
-
-  for (let i = 2 ** numVariables - 1; i >= 0; i--) {
-    let tmp = i
-      .toString(2)
-      .padStart(numVariables, "0")
-      .split("");
+  for (let i = 2 ** nVars - 1; i >= 0; i--) {
+    let binStr = bin(i, nVars);
 
     try {
-      tmp.push(evalExp(exp, tmp, variables));
-    } 
-    catch (err) {}
-    
+      binStr += evalExp(exp, binStr, vars);
+    } catch (err) {}
 
-    res.push(tmp);
+    res.push(binStr);
   }
 
-  return res;
+  return res.map(el =>
+    el
+      .replace(/1/g, "T")
+      .replace(/0/g, "F")
+      .split("")
+  );
 }

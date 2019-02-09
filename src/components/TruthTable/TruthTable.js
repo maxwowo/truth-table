@@ -5,7 +5,7 @@ import styles from "./TruthTable.module.css";
 
 const TruthTable = props => (
   <table>
-    <TruthTableHead row={props.header} />
+    <TruthTableHead row={props.head} />
     <TruthTableBody content={props.content} />
   </table>
 );

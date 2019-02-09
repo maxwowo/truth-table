@@ -6,33 +6,33 @@ import styles from "./App.module.css";
 
 class App extends Component {
   state = {
-    truthTableHead: null,
-    truthTableContent: null,
-    displayTruthTable: false
+    ttHead: null,
+    ttContent: null,
+    showTable: false
   };
 
   handleInputChanged = event => {
-    const exp = Helper.getExpression(event);
-    const variables = Helper.getVariables(exp);
-    const ttHead = Helper.getTableHeader(variables, exp);
-    const ttContent = Helper.getTableContent(
-      variables.length,
+    const exp = Helper.getExp(event);
+    const vars = Helper.getVars(exp);
+    const head = Helper.getTableHead(vars, exp);
+    const content = Helper.getTableContent(
+      vars.length,
       exp,
-      variables
+      vars
     );
 
     this.setState({
-      displayTruthTable: !exp ? false : true,
-      truthTableHead: ttHead,
-      truthTableContent: ttContent
+      showTable: !exp ? false : true,
+      ttHead: head,
+      ttContent: content
     });
   };
 
   render() {
-    const table = this.state.displayTruthTable ? (
+    const table = this.state.showTable ? (
       <TruthTable
-        content={this.state.truthTableContent}
-        header={this.state.truthTableHead}
+        content={this.state.ttContent}
+        head={this.state.ttHead}
       />
     ) : null;
 
