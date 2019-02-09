@@ -56,7 +56,9 @@ export function getTableContent(nVars, exp, vars) {
 
     try {
       binStr += evalExp(exp, binStr, vars);
-    } catch (err) {}
+    } catch (err) {
+      binStr += ' ';
+    }
 
     res.push(binStr);
   }
