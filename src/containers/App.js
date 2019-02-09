@@ -13,10 +13,10 @@ class App extends Component {
       modal: false
     };
 
-    this.toggle = this.toggle.bind(this);
+    this.modalToggle = this.modalToggle.bind(this);
   }
 
-  toggle() {
+  modalToggle() {
     this.setState(prevState => ({
       modal: !prevState.modal
     }));
@@ -24,7 +24,6 @@ class App extends Component {
 
   handleInputChanged = event => {
     const formattedExp = Helper.formatExp(event.target.value);
-
     event.target.value = formattedExp;
 
     const exp = Helper.getExp(event);
@@ -51,7 +50,7 @@ class App extends Component {
         content={this.state.ttContent}
         head={this.state.ttHead}
         showTable={this.state.showTable}
-        onModalClicked={this.toggle}
+        onModalClicked={this.modalToggle}
         modal={this.state.modal}
       />
     );

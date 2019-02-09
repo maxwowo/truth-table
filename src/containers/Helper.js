@@ -30,9 +30,9 @@ export function validKey(key) {
 
 export function formatExp(exp) {
   return exp
-    .replace(/\&\&/g, "∧")
+    .replace(/&&/g, "∧")
     .replace(/\|\|/g, "∨")
-    .replace(/\!/g, "~");
+    .replace(/!/g, "~");
 }
 
 function evalExp(exp, truthValues, vars) {
@@ -57,7 +57,7 @@ export function getTableContent(nVars, exp, vars) {
     try {
       binStr += evalExp(exp, binStr, vars);
     } catch (err) {
-      binStr += ' ';
+      binStr += " ";
     }
 
     res.push(binStr);

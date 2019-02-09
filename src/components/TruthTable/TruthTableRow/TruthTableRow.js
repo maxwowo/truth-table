@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./TruthTableRow.module.css";
 
 const TruthTableRow = props => (
   <tr>
