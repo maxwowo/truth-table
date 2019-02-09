@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.css";
 import { Table, Container } from "reactstrap";
 import TruthTableBody from "./TruthTableBody/TruthTableBody";
 import TruthTableHead from "./TruthTableHead/TruthTableHead";

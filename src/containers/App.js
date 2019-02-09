@@ -4,11 +4,23 @@ import "./App.module.css";
 import * as Helper from "./Helper";
 
 class App extends Component {
-  state = {
-    ttHead: null,
-    ttContent: null,
-    showTable: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      ttHead: null,
+      ttContent: null,
+      showTable: false,
+      modal: false
+    };
+
+    this.toggle = this.toggle.bind(this);
+  }
+
+  toggle() {
+    this.setState(prevState => ({
+      modal: !prevState.modal
+    }));
+  }
 
   handleInputChanged = event => {
     const formattedExp = Helper.formatExp(event.target.value);
@@ -39,6 +51,8 @@ class App extends Component {
         content={this.state.ttContent}
         head={this.state.ttHead}
         showTable={this.state.showTable}
+        onModalClicked={this.toggle}
+        modal={this.state.modal}
       />
     );
   }
