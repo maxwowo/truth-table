@@ -12,9 +12,13 @@ class App extends Component {
   };
 
   handleInputChanged = event => {
+    const formattedExp = Helper.formatExp(event.target.value)
+       
+    event.target.value = formattedExp;
+    
     const exp = Helper.getExp(event);
     const vars = Helper.getVars(exp);
-    const head = Helper.getTableHead(vars, exp);
+    const head = Helper.getTableHead(vars, formattedExp);
     const content = Helper.getTableContent(vars.length, exp, vars);
 
     this.setState({
@@ -26,13 +30,8 @@ class App extends Component {
 
   handleKeyPress = event => {
     if (!Helper.validKey(event.key)) event.preventDefault();
-    // const val = event.target.value;
-    // event.target.value = val
-    //   .replace(/&&/g, "∧")
-    //   .replace(/||/g, "∨")
-    //   .replace(/!/g, "~");
   };
-
+  
   render() {
     const table = this.state.showTable ? (
       <TruthTable content={this.state.ttContent} head={this.state.ttHead} />

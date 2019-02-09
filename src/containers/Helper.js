@@ -1,11 +1,19 @@
-const OPERATORS = "&|!"
+const OPERATORS = "&|!()";
 
 export function getVars(exp) {
   return exp.split(/\W/g).filter(el => el !== "");
 }
 
 export function getExp(event) {
-  return event.target.value.replace(/\s/g, "");
+  function helper(exp) {
+    return exp
+      .replace(/∧/g, "&&")
+      .replace(/∨/g, "||")
+      .replace(/~/g, "!")
+      .replace(/\s/g, "");
+  }
+
+  return helper(event.target.value);
 }
 
 export function getTableHead(vars, exp) {
@@ -16,8 +24,15 @@ export function validKey(key) {
   function isAlpha(key) {
     return key.length == 1 && key.match(/^[A-Z]+$/i);
   }
-  
+
   return OPERATORS.includes(key) || isAlpha(key);
+}
+
+export function formatExp(exp) {
+  return exp
+    .replace(/\&\&/g, "∧")
+    .replace(/\|\|/g, "∨")
+    .replace(/\!/g, "~");
 }
 
 function evalExp(exp, truthValues, vars) {
