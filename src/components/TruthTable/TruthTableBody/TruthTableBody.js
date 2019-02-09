@@ -1,10 +1,12 @@
 import React from "react";
-import TruthTableContent from "./TruthTableContent/TruthTableContent";
+import TruthTableRow from "../TruthTableRow/TruthTableRow";
 import styles from "./TruthTableBody.module.css";
 
 const TruthTableBody = props => (
   <tbody>
-    <TruthTableContent content={props.content} />
+    {props.content.map((row, index) => {
+      return <TruthTableRow row={row} key={index} />;
+    })}
   </tbody>
 );
 
