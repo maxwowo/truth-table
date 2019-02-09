@@ -1,3 +1,5 @@
+const OPERATORS = "&|!"
+
 export function getVars(exp) {
   return exp.split(/\W/g).filter(el => el !== "");
 }
@@ -8,6 +10,14 @@ export function getExp(event) {
 
 export function getTableHead(vars, exp) {
   return [...vars, exp];
+}
+
+export function validKey(key) {
+  function isAlpha(key) {
+    return key.length == 1 && key.match(/^[A-Z]+$/i);
+  }
+  
+  return OPERATORS.includes(key) || isAlpha(key);
 }
 
 function evalExp(exp, truthValues, vars) {

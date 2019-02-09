@@ -24,6 +24,15 @@ class App extends Component {
     });
   };
 
+  handleKeyPress = event => {
+    if (!Helper.validKey(event.key)) event.preventDefault();
+    // const val = event.target.value;
+    // event.target.value = val
+    //   .replace(/&&/g, "∧")
+    //   .replace(/||/g, "∨")
+    //   .replace(/!/g, "~");
+  };
+
   render() {
     const table = this.state.showTable ? (
       <TruthTable content={this.state.ttContent} head={this.state.ttHead} />
@@ -31,7 +40,10 @@ class App extends Component {
 
     return (
       <div className={styles.appBody}>
-        <Cockpit onInputChanged={this.handleInputChanged} />
+        <Cockpit
+          onInputChanged={this.handleInputChanged}
+          onKeyPress={this.handleKeyPress}
+        />
         {table}
       </div>
     );
