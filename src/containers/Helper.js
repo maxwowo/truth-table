@@ -1,7 +1,7 @@
 const OPERATORS = "&|!()";
 
 export function getVars(exp) {
-  exp = exp.replace(/\W/g, "").split("");
+  exp = exp.split(/\W/g).filter(el => el !== "");
   return exp.filter((el, index) => index <= exp.indexOf(el));
 }
 
