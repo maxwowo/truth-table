@@ -11,7 +11,7 @@
 }
 
 .cockpitInput {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-size: 2em;
   margin: 2vh auto 2vh auto;
   max-width: 50%;
@@ -31,7 +31,6 @@
   box-shadow: none;
   text-shadow: none;
   color: white;
-  caret-color: transparent;
 }
 
 .transparent {

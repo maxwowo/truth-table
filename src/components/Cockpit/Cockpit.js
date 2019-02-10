@@ -15,7 +15,7 @@ const Cockpit = props => (
       )}
       onChange={props.onInputChanged}
       onKeyPress={props.onKeyPress}
-      placeholder="Enter expression"
+      placeholder="Enter an expression"
       autoFocus
     />
   </Container>
