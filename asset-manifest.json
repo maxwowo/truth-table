@@ -1,15 +1,15 @@
 {
-  "main.css": "/truth-table-generator/static/css/main.5ea09647.chunk.css",
-  "main.js": "/truth-table-generator/static/js/main.11973178.chunk.js",
-  "main.js.map": "/truth-table-generator/static/js/main.11973178.chunk.js.map",
+  "main.css": "/truth-table-generator/static/css/main.462b4db2.chunk.css",
+  "main.js": "/truth-table-generator/static/js/main.7fb6cea7.chunk.js",
+  "main.js.map": "/truth-table-generator/static/js/main.7fb6cea7.chunk.js.map",
   "static/css/1.ce76bdff.chunk.css": "/truth-table-generator/static/css/1.ce76bdff.chunk.css",
   "static/js/1.5ebdbedd.chunk.js": "/truth-table-generator/static/js/1.5ebdbedd.chunk.js",
   "static/js/1.5ebdbedd.chunk.js.map": "/truth-table-generator/static/js/1.5ebdbedd.chunk.js.map",
   "runtime~main.js": "/truth-table-generator/static/js/runtime~main.ff4d052d.js",
   "runtime~main.js.map": "/truth-table-generator/static/js/runtime~main.ff4d052d.js.map",
   "static/css/1.ce76bdff.chunk.css.map": "/truth-table-generator/static/css/1.ce76bdff.chunk.css.map",
-  "static/css/main.5ea09647.chunk.css.map": "/truth-table-generator/static/css/main.5ea09647.chunk.css.map",
+  "static/css/main.462b4db2.chunk.css.map": "/truth-table-generator/static/css/main.462b4db2.chunk.css.map",
   "index.html": "/truth-table-generator/index.html",
-  "precache-manifest.cd61f45c28a660c85f15f5548a872093.js": "/truth-table-generator/precache-manifest.cd61f45c28a660c85f15f5548a872093.js",
+  "precache-manifest.1749ea93386fd809e03ef8c390e8e7f6.js": "/truth-table-generator/precache-manifest.1749ea93386fd809e03ef8c390e8e7f6.js",
   "service-worker.js": "/truth-table-generator/service-worker.js"
 }

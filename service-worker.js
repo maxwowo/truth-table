@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/truth-table-generator/precache-manifest.cd61f45c28a660c85f15f5548a872093.js"
+  "/truth-table-generator/precache-manifest.1749ea93386fd809e03ef8c390e8e7f6.js"
 );
 
 workbox.clientsClaim();
